@@ -46,61 +46,66 @@ useSeoMeta({
 
 <template>
   <UPage v-if="page">
-    <section class="border-b border-default">
-      <UContainer class="py-16 sm:py-20 lg:py-28">
-        <h1
-          class="
-            max-w-4xl text-pretty text-3xl font-medium tracking-tight
-            text-highlighted
-            sm:text-4xl lg:text-5xl
-          "
-        >
-          {{ page.title }}
-        </h1>
+    <HomeHero :page="page" />
 
-        <p class="mt-5 max-w-2xl text-pretty text-base text-muted sm:text-lg">
-          {{ page.description }}
-        </p>
-      </UContainer>
-    </section>
-
-    <UContainer v-if="featured" class="py-14 sm:py-16">
-      <SectionHeading :title="page.blog.featuredTitle" />
-
-      <BlogPostCard
-        :post="featured"
-        featured
+    <UContainer v-if="featured" class="py-20 sm:py-24">
+      <SectionHeading
+        :eyebrow="page.blog.featuredEyebrow"
+        :title="page.blog.featuredTitle"
       />
+
+      <BlogPostCard :post="featured" featured />
     </UContainer>
 
-    <UContainer v-if="latest.length" class="pb-16 sm:pb-20">
-      <USeparator class="mb-14 sm:mb-16" />
+    <UContainer v-if="latest.length" class="pb-20 sm:pb-28">
+      <USeparator class="mb-20 sm:mb-24" />
 
       <SectionHeading
+        :eyebrow="page.blog.latestEyebrow"
         :title="page.blog.latestTitle"
         to="/blog"
         :link-label="page.blog.allLabel"
       />
 
-      <UBlogPosts orientation="horizontal">
-        <Motion
-          v-for="(post, index) in latest"
-          :key="post.id"
-          :initial="{ opacity: 0, transform: 'translateY(12px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.35, delay: Math.min(index, 2) * 0.08 }"
-          :in-view-options="{ once: true }"
-        >
-          <BlogPostCard :post="post" />
-        </Motion>
-      </UBlogPosts>
+      <BlogPostGrid :posts="latest" />
     </UContainer>
 
-    <UContainer v-if="!posts?.length" class="py-20">
+    <UContainer v-if="!posts?.length" class="py-24">
       <UEmpty
         icon="i-lucide-pen-line"
         :title="page.blog.empty"
       />
     </UContainer>
+
+    <section class="border-t border-default bg-muted/50">
+      <UContainer class="py-20 text-center sm:py-24">
+        <h2
+          class="
+            text-pretty text-2xl font-semibold tracking-tight text-highlighted
+            sm:text-3xl
+          "
+        >
+          {{ page.cta.title }}
+        </h2>
+
+        <p
+          class="
+            mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed
+            text-muted
+          "
+        >
+          {{ page.cta.description }}
+        </p>
+
+        <UButton
+          to="/contact"
+          :label="page.cta.label"
+          trailing-icon="i-lucide-arrow-right"
+          color="neutral"
+          size="lg"
+          class="mt-8"
+        />
+      </UContainer>
+    </section>
   </UPage>
 </template>

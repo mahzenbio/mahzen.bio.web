@@ -3,7 +3,7 @@ title: Yürüyerek düşünmek
 description: Masa başında çözülmeyen bir mesele, yarım saatlik yürüyüşte kendiliğinden açılıyor. Neden böyle olduğu üzerine.
 date: 2026-07-09
 image: /images/blog/yuruyerek-dusunmek.webp
-imageAlt: Turkuaz tonlarda iç içe geçmiş kemer çizimleri
+imageAlt: Kadrajı çapraz kesen paralel çizgilerden oluşan soyut çizim
 category: Deneme
 tags:
   - Alışkanlık

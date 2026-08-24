@@ -17,6 +17,7 @@ export interface SiteFooter {
 
 export interface SiteAppConfig {
   name: string
+  wordmark: string
   navigation: SiteNavigationItem[]
   footer: SiteFooter
 }

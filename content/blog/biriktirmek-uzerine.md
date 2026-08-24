@@ -3,8 +3,8 @@ title: Biriktirmek üzerine
 description: Bir mahzen, saklamak için değil; zamanla olgunlaşsın diye vardır. Toplamakla biriktirmek arasındaki fark.
 date: 2026-06-12
 image: /images/blog/biriktirmek-uzerine.webp
-imageAlt: Nötr gri tonlarda iç içe geçmiş kemer çizimleri
-category: Deneme
+imageAlt: İç içe geçmiş kemerlerden oluşan soyut çizim
+category: Arşiv
 tags:
   - Arşiv
   - Alışkanlık

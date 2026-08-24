@@ -1,10 +1,21 @@
-title: Aklımda kalanları buraya yazıyorum.
-description: Üzerine düşünmeye değer bulduğum konularda kısa notlar ve denemeler.
+title: Aklıma takılan her şey burada saklanıyor.
 blog:
-  featuredTitle: Öne çıkan
-  latestTitle: Son yazılar
+  featuredEyebrow: Seçilmiş
+  featuredTitle: Öne Çıkan Yazı
+  latestEyebrow: Son yazılar
+  latestTitle: Güncel İçerikler
   allLabel: Tüm yazılar
   empty: Henüz yayımlanmış bir yazı yok. Yakında burada olacak.
+cta:
+  title: Bir şey mi söylemek istiyorsun?
+  description: Yazdıklarım hakkında bir düşüncen ya da tamamen başka bir konuda bir sorun varsa mesaj bırakabilirsin.
+  label: Mesaj gönder
+description: Okuduklarım, denediklerim, merak ettiklerim. Konu sınırı yok; üstüne düşünmeye değer bulduğum ne varsa buraya bırakıyorum.
+hero:
+  badge: Not defteri
+  image: /images/hero.png
+  imageAlt: İç içe geçmiş kemerlerden oluşan soyut çizim
+  actionLabel: Yazılara göz at
 seo:
   title: Notlar ve yazılar
   description: mahzen.bio üzerinde yayımlanan notlar, denemeler ve yazılar.

@@ -3,7 +3,7 @@ title: Aynı filmi ikinci kez izlemek
 description: İlk izleyişte hikâyeyi takip ediyoruz, ikincisinde filmi görüyoruz. Tekrar izlemenin neyi açtığı üzerine notlar.
 date: 2026-08-14
 image: /images/blog/ikinci-kez-izlemek.webp
-imageAlt: Mor tonlarında iç içe geçmiş kemer çizimleri
+imageAlt: Ortak bir merkezden genişleyen iç içe halkalardan oluşan soyut çizim
 category: Film
 tags:
   - Sinema

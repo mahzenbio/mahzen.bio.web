@@ -5,7 +5,7 @@ date: 2026-07-24
 description: Parçaları karıştırarak dinlemek kolay, ama bazı albümler sıralarını kaybettiklerinde anlamlarını da kaybediyor.
 draft: false
 image: /images/blog/bastan-sona-dinlemek.webp
-imageAlt: Sıcak pembe tonlarında iç içe geçmiş kemer çizimleri
+imageAlt: Farklı yüksekliklerde dikey çubuklardan oluşan soyut çizim
 minRead: "4"
 tags:
   - Müzik

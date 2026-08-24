@@ -2,6 +2,7 @@ import type { SiteAppConfig } from './types/site'
 
 const site = {
   name: 'mahzen.bio',
+  wordmark: 'mahzen',
 
   navigation: [
     {

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import NumberFlow from '@number-flow/vue'
+
 const { data: page } = await useAsyncData(
   'blog-page',
   () => queryCollection('blogPage').first(),
@@ -22,6 +24,8 @@ const { data: posts } = await useAsyncData(
   },
 )
 
+const count = computed(() => posts.value?.length ?? 0)
+
 const { public: { siteUrl } } = useRuntimeConfig()
 
 const title = page.value.seo?.title ?? page.value.title
@@ -42,45 +46,39 @@ useSeoMeta({
 
 <template>
   <UPage v-if="page">
-    <section class="border-b border-default">
-      <UContainer class="py-14 sm:py-16 lg:py-20">
-        <h1
-          class="
-            text-pretty text-3xl font-medium tracking-tight text-highlighted
-            sm:text-4xl
-          "
-        >
-          {{ page.title }}
-        </h1>
+    <UContainer class="pb-20 pt-16 sm:pb-28 sm:pt-24">
+      <h1
+        class="
+          text-pretty text-4xl font-semibold tracking-tight text-highlighted
+          sm:text-5xl lg:text-6xl
+        "
+      >
+        {{ page.title }}
+      </h1>
 
-        <p class="mt-4 max-w-2xl text-pretty text-base text-muted">
-          {{ page.description }}
-        </p>
+      <p class="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted">
+        {{ page.description }}
+      </p>
 
-        <p class="mt-6 text-sm text-dimmed">
-          {{ posts?.length ?? 0 }} yazı
-        </p>
-      </UContainer>
-    </section>
+      <p class="eyebrow mt-8 flex items-center gap-1.5 text-dimmed">
+        <NumberFlow
+          :value="count"
+          class="tabular-nums text-toned"
+        />
+        yazı
+      </p>
 
-    <UContainer class="py-14 sm:py-16">
-      <UBlogPosts v-if="posts?.length" orientation="horizontal">
-        <Motion
-          v-for="(post, index) in posts"
-          :key="post.id"
-          :initial="{ opacity: 0, transform: 'translateY(12px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.35, delay: Math.min(index, 2) * 0.08 }"
-          :in-view-options="{ once: true }"
-        >
-          <BlogPostCard :post="post" />
-        </Motion>
-      </UBlogPosts>
+      <BlogPostList
+        v-if="count"
+        :posts="posts!"
+        class="mt-12"
+      />
 
       <UEmpty
         v-else
         icon="i-lucide-pen-line"
         title="Henüz yayımlanmış bir yazı yok."
+        class="mt-12"
       />
     </UContainer>
   </UPage>

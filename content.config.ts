@@ -38,13 +38,64 @@ export default defineContentConfig({
       schema: z.object({
         seo: seoSchema,
 
+        hero: z.object({
+          badge: z.string()
+            .nonempty()
+            .editor({
+              label: 'Üst etiket',
+              description:
+                'Başlığın üstündeki küçük rozet metni.',
+            }),
+
+          image: z.string()
+            .nonempty()
+            .editor({
+              input: 'media',
+              label: 'Arka plan görseli',
+              description:
+                'Ana sayfanın en üstünde, yazının arkasında görünür. Geniş görseller en iyi sonucu verir.',
+            }),
+
+          imageAlt: z.string()
+            .nonempty()
+            .editor({
+              label: 'Arka plan görsel açıklaması',
+              description:
+                'Görselde ne olduğunu anlatır; ekran okuyucular için gereklidir.',
+            }),
+
+          actionLabel: z.string()
+            .nonempty()
+            .editor({
+              label: 'Buton metni',
+              description:
+                'Yazılar sayfasına giden butonun üstündeki metin.',
+            }),
+        }),
+
         blog: z.object({
+          featuredEyebrow: z.string()
+            .nonempty()
+            .editor({
+              label: 'Öne çıkan üst etiket',
+              description:
+                'Başlığın üstünde küçük harflerle görünen etiket.',
+            }),
+
           featuredTitle: z.string()
             .nonempty()
             .editor({
               label: 'Öne çıkan yazı başlığı',
               description:
                 'En yeni yazının üstünde görünen küçük başlık.',
+            }),
+
+          latestEyebrow: z.string()
+            .nonempty()
+            .editor({
+              label: 'Son yazılar üst etiketi',
+              description:
+                'Başlığın üstünde küçük harflerle görünen etiket.',
             }),
 
           latestTitle: z.string()
@@ -69,6 +120,29 @@ export default defineContentConfig({
               label: 'Yazı yokken görünecek metin',
               description:
                 'Henüz yayımlanmış bir yazı olmadığında gösterilir.',
+            }),
+        }),
+
+        cta: z.object({
+          title: z.string()
+            .nonempty()
+            .editor({
+              label: 'Kapanış başlığı',
+              description:
+                'Ana sayfanın en altındaki iletişim davetinin başlığı.',
+            }),
+
+          description: z.string()
+            .nonempty()
+            .editor({
+              input: 'textarea',
+              label: 'Kapanış açıklaması',
+            }),
+
+          label: z.string()
+            .nonempty()
+            .editor({
+              label: 'Kapanış buton metni',
             }),
         }),
       }),

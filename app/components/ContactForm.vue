@@ -100,7 +100,7 @@ async function onSubmit(event: FormSubmitEvent<ContactFormState>) {
   <UForm
     :state="state"
     :validate="validate"
-    class="max-w-xl space-y-4"
+    class="space-y-4 text-left"
     @submit="onSubmit"
   >
     <UFormField
@@ -130,13 +130,17 @@ async function onSubmit(event: FormSubmitEvent<ContactFormState>) {
       />
     </UFormField>
 
-    <UButton
-      type="submit"
-      :label="submitLabel"
-      :loading="pending"
-      color="primary"
-      size="lg"
-      trailing-icon="i-lucide-send"
-    />
+    <div class="flex justify-end pt-2">
+      <UButton
+        type="submit"
+        :label="submitLabel"
+        :loading="pending"
+        color="neutral"
+        variant="subtle"
+        size="md"
+        trailing-icon="i-lucide-send"
+        class="shadow-sm"
+      />
+    </div>
   </UForm>
 </template>

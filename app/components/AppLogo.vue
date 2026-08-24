@@ -1,13 +1,13 @@
 <script setup lang="ts">
-const { name } = useAppConfig()
+const { wordmark } = useAppConfig()
 </script>
 
 <template>
   <ULink
     to="/"
-    :aria-label="`${name} — ana sayfa`"
+    :aria-label="`${wordmark} — ana sayfa`"
     class="
-      group flex items-center gap-2
+      group flex items-center gap-2.5
       text-highlighted
       focus-visible:outline-2 focus-visible:outline-offset-4
       focus-visible:outline-primary
@@ -15,46 +15,42 @@ const { name } = useAppConfig()
   >
     <svg
       viewBox="0 0 32 32"
-      class="size-6 sm:size-7"
+      class="size-7 shrink-0"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.4"
+      stroke-linecap="round"
       aria-hidden="true"
       focusable="false"
     >
-      <path
-        d="M6 24V13a5 5 0 0 1 10 0v11M16 13a5 5 0 0 1 10 0v11"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="logo-mark"
-      />
+      <path class="arch arch-outer" d="M5 26V15a11 11 0 0 1 22 0v11" />
+      <path class="arch arch-inner" d="M11 26v-8a5 5 0 0 1 10 0v8" opacity=".55" />
     </svg>
 
-    <span
-      class="
-        text-sm font-medium tracking-tight
-        sm:text-base
-      "
-    >
-      {{ name }}
+    <span class="text-lg font-medium tracking-tight">
+      {{ wordmark }}
     </span>
   </ULink>
 </template>
 
 <style scoped>
-/* The mark redraws itself on hover — the same restrained motion used elsewhere. */
-.logo-mark {
-  stroke-dasharray: 64;
+/* The arches redraw from the outside in — a look down into the vault. */
+.arch {
+  stroke-dasharray: 90;
   stroke-dashoffset: 0;
 }
 
-.group:hover .logo-mark {
-  animation: logo-draw 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+.group:hover .arch-outer {
+  animation: arch-draw 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes logo-draw {
+.group:hover .arch-inner {
+  animation: arch-draw 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.12s;
+}
+
+@keyframes arch-draw {
   from {
-    stroke-dashoffset: 64;
+    stroke-dashoffset: 90;
   }
   to {
     stroke-dashoffset: 0;
@@ -62,7 +58,7 @@ const { name } = useAppConfig()
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .group:hover .logo-mark {
+  .group:hover .arch {
     animation: none;
   }
 }

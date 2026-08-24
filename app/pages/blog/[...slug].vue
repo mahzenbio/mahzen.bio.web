@@ -21,17 +21,6 @@ if (!post.value) {
   })
 }
 
-const { data: surround } = await useAsyncData(
-  `${route.path}-surround`,
-  () => {
-    return queryCollectionItemSurroundings(
-      'blog',
-      route.path,
-      { fields: ['description'] },
-    ).where('draft', '=', false).order('date', 'DESC')
-  },
-)
-
 const imageUrl = computed(() => new URL(post.value!.image, siteUrl).href)
 
 useSeoMeta({
@@ -73,29 +62,49 @@ useHead({
 
 <template>
   <UPage v-if="post">
-    <article>
-      <section class="border-b border-default">
-        <UContainer class="py-12 sm:py-16">
-          <UButton
-            to="/blog"
-            icon="i-lucide-arrow-left"
-            label="Yazılar"
-            color="neutral"
-            variant="link"
-            size="sm"
-            class="mb-8 px-0"
+    <UContainer class="py-14 sm:py-20">
+      <article class="mx-auto max-w-3xl">
+        <ULink
+          to="/blog"
+          class="
+            eyebrow group inline-flex items-center gap-2 text-muted
+            transition-colors
+            hover:text-highlighted
+          "
+        >
+          <UIcon
+            name="i-lucide-arrow-left"
+            class="
+              size-3.5 transition-transform duration-300 ease-out
+              group-hover:-translate-x-1
+            "
           />
+          Blog
+        </ULink>
 
-          <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
-            <UBadge
-              :label="post.category"
-              color="neutral"
-              variant="subtle"
-            />
+        <NuxtImg
+          :src="post.image"
+          :alt="post.imageAlt"
+          width="1280"
+          height="720"
+          sizes="xs:100vw sm:100vw md:100vw lg:768px xl:768px xxl:768px"
+          preload
+          fetchpriority="high"
+          class="
+            mt-8 aspect-[16/10] w-full rounded-lg object-cover
+            bg-elevated/60 ring-1 ring-default
+          "
+        />
 
+        <header class="mt-10">
+          <div class="eyebrow flex flex-wrap items-center gap-x-3 gap-y-2 text-dimmed">
             <time :datetime="new Date(post.date).toISOString()">
               {{ formatDate(post.date) }}
             </time>
+
+            <span aria-hidden="true">·</span>
+
+            <span>{{ post.category }}</span>
 
             <span aria-hidden="true">·</span>
 
@@ -104,7 +113,7 @@ useHead({
 
           <h1
             class="
-              mt-5 max-w-4xl text-pretty text-3xl font-medium tracking-tight
+              mt-5 text-balance text-3xl font-semibold tracking-tight
               text-highlighted
               sm:text-4xl lg:text-5xl
             "
@@ -112,28 +121,14 @@ useHead({
             {{ post.title }}
           </h1>
 
-          <p class="mt-4 max-w-2xl text-pretty text-base text-muted sm:text-lg">
+          <p class="mt-5 text-pretty text-base leading-relaxed text-muted sm:text-lg">
             {{ post.description }}
           </p>
-        </UContainer>
-      </section>
+        </header>
 
-      <UContainer class="py-12 sm:py-16">
-        <NuxtImg
-          :src="post.image"
-          :alt="post.imageAlt"
-          width="1280"
-          height="720"
-          sizes="(max-width: 1024px) 100vw, 1024px"
-          preload
-          fetchpriority="high"
-          class="
-            mx-auto aspect-video w-full max-w-5xl rounded-xl object-cover
-            ring ring-default
-          "
-        />
+        <USeparator class="my-10" />
 
-        <div class="article-content mx-auto mt-14 max-w-3xl">
+        <div class="article-content">
           <ContentRenderer
             v-if="post.body"
             :value="post"
@@ -142,25 +137,38 @@ useHead({
 
         <div
           v-if="post.tags?.length"
-          class="mx-auto mt-12 flex max-w-3xl flex-wrap items-center gap-2"
+          class="mt-12 flex flex-wrap items-center gap-2"
         >
           <UBadge
             v-for="tag in post.tags"
             :key="tag"
             :label="tag"
             color="neutral"
-            variant="outline"
+            variant="subtle"
             size="sm"
           />
         </div>
 
-        <USeparator class="mx-auto my-12 max-w-3xl" />
+        <USeparator class="my-12" />
 
-        <UContentSurround
-          :surround="surround"
-          class="mx-auto max-w-3xl"
-        />
-      </UContainer>
-    </article>
+        <ULink
+          to="/blog"
+          class="
+            eyebrow group inline-flex items-center gap-2 text-muted
+            transition-colors
+            hover:text-highlighted
+          "
+        >
+          <UIcon
+            name="i-lucide-arrow-left"
+            class="
+              size-3.5 transition-transform duration-300 ease-out
+              group-hover:-translate-x-1
+            "
+          />
+          Tüm yazılar
+        </ULink>
+      </article>
+    </UContainer>
   </UPage>
 </template>

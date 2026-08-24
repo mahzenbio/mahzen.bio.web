@@ -3,7 +3,7 @@ title: Yarıda bırakılan kitaplar
 description: Bir kitabı bitirmek zorunda olmadığımı kabul ettiğimden beri daha çok okuyorum. Bırakma izninin okuma alışkanlığına etkisi üzerine.
 date: 2026-08-20
 image: /images/blog/yarida-birakilan-kitaplar.webp
-imageAlt: Karanlık bir zemin üzerinde iç içe geçmiş kemer çizimleri
+imageAlt: Üst üste dizilmiş, gitgide kısalan yatay katmanlardan oluşan soyut çizim
 category: Kitap
 tags:
   - Okuma

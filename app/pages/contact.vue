@@ -32,8 +32,8 @@ useSeoMeta({
 
 <template>
   <UPage v-if="page">
-    <section class="border-b border-default">
-      <UContainer class="py-14 sm:py-16 lg:py-20">
+    <UContainer class="py-16 sm:py-24">
+      <div class="mx-auto max-w-xl text-center">
         <h1
           class="
             text-pretty text-3xl font-medium tracking-tight text-highlighted
@@ -43,14 +43,15 @@ useSeoMeta({
           {{ page.title }}
         </h1>
 
-        <p class="mt-4 max-w-2xl text-pretty text-base text-muted">
+        <p class="mt-4 text-pretty text-base text-muted">
           {{ page.description }}
         </p>
-      </UContainer>
-    </section>
+      </div>
 
-    <UContainer class="py-14 sm:py-16">
-      <ContactForm v-bind="page.form" />
+      <ContactForm
+        v-bind="page.form"
+        class="mx-auto mt-12 max-w-xl"
+      />
     </UContainer>
   </UPage>
 </template>

@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="mahzen.bio">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="mahzen">
   <style>
-    .bg { fill: #0a0a0a; }
-    .mark { stroke: #ffffff; }
+    .bg { fill: #0a0a0a }
+    .ink { stroke: #ffffff }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #fafafa; }
-      .mark { stroke: #0a0a0a; }
+      .bg { fill: #fafafa }
+      .ink { stroke: #0a0a0a }
     }
   </style>
-  <rect class="bg" width="32" height="32" rx="8"/>
-  <path class="mark" transform="translate(16 16) scale(.82) translate(-16 -16)" d="M6 24V13a5 5 0 0 1 10 0v11M16 13a5 5 0 0 1 10 0v11" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <g transform="translate(16 16) scale(.84) translate(-16 -16)" fill="none" stroke-width="2.4" stroke-linecap="round">
+    <path class="ink" d="M5 26V15a11 11 0 0 1 22 0v11"/>
+    <path class="ink" d="M11 26v-8a5 5 0 0 1 10 0v8" opacity=".55"/>
+  </g>
 </svg>
