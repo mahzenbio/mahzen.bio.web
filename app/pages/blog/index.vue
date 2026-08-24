@@ -1,30 +1,26 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData(
-  'index-page',
-  () => queryCollection('index').first(),
+  'blog-page',
+  () => queryCollection('blogPage').first(),
 )
 
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Ana sayfa içeriği bulunamadı',
+    statusMessage: 'Blog sayfası içeriği bulunamadı',
     fatal: true,
   })
 }
 
 const { data: posts } = await useAsyncData(
-  'index-posts',
+  'blog-posts',
   () => {
     return queryCollection('blog')
       .where('draft', '=', false)
       .order('date', 'DESC')
-      .limit(7)
       .all()
   },
 )
-
-const featured = computed(() => posts.value?.[0])
-const latest = computed(() => posts.value?.slice(1) ?? [])
 
 const { public: { siteUrl } } = useRuntimeConfig()
 
@@ -47,44 +43,30 @@ useSeoMeta({
 <template>
   <UPage v-if="page">
     <section class="border-b border-default">
-      <UContainer class="py-16 sm:py-20 lg:py-28">
+      <UContainer class="py-14 sm:py-16 lg:py-20">
         <h1
           class="
-            max-w-4xl text-pretty text-3xl font-medium tracking-tight
-            text-highlighted
-            sm:text-4xl lg:text-5xl
+            text-pretty text-3xl font-medium tracking-tight text-highlighted
+            sm:text-4xl
           "
         >
           {{ page.title }}
         </h1>
 
-        <p class="mt-5 max-w-2xl text-pretty text-base text-muted sm:text-lg">
+        <p class="mt-4 max-w-2xl text-pretty text-base text-muted">
           {{ page.description }}
+        </p>
+
+        <p class="mt-6 text-sm text-dimmed">
+          {{ posts?.length ?? 0 }} yazı
         </p>
       </UContainer>
     </section>
 
-    <UContainer v-if="featured" class="py-14 sm:py-16">
-      <SectionHeading :title="page.blog.featuredTitle" />
-
-      <BlogPostCard
-        :post="featured"
-        featured
-      />
-    </UContainer>
-
-    <UContainer v-if="latest.length" class="pb-16 sm:pb-20">
-      <USeparator class="mb-14 sm:mb-16" />
-
-      <SectionHeading
-        :title="page.blog.latestTitle"
-        to="/blog"
-        :link-label="page.blog.allLabel"
-      />
-
-      <UBlogPosts orientation="horizontal">
+    <UContainer class="py-14 sm:py-16">
+      <UBlogPosts v-if="posts?.length" orientation="horizontal">
         <Motion
-          v-for="(post, index) in latest"
+          v-for="(post, index) in posts"
           :key="post.id"
           :initial="{ opacity: 0, transform: 'translateY(12px)' }"
           :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
@@ -94,12 +76,11 @@ useSeoMeta({
           <BlogPostCard :post="post" />
         </Motion>
       </UBlogPosts>
-    </UContainer>
 
-    <UContainer v-if="!posts?.length" class="py-20">
       <UEmpty
+        v-else
         icon="i-lucide-pen-line"
-        :title="page.blog.empty"
+        title="Henüz yayımlanmış bir yazı yok."
       />
     </UContainer>
   </UPage>

@@ -5,8 +5,8 @@ const { footer } = useAppConfig()
 <template>
   <UFooter
     :ui="{
-      root: 'border-t border-default',
-      left: 'text-xs text-muted',
+      root: 'mt-24 border-t border-default',
+      left: 'text-sm text-muted',
     }"
   >
     <template #left>
@@ -24,7 +24,6 @@ const { footer } = useAppConfig()
         color="neutral"
         variant="ghost"
         size="sm"
-        class="p-1"
       />
     </template>
   </UFooter>

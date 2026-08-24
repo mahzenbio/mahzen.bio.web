@@ -39,12 +39,28 @@ export default defineContentConfig({
         seo: seoSchema,
 
         blog: z.object({
-          title: z.string()
+          featuredTitle: z.string()
             .nonempty()
             .editor({
-              label: 'Yazılar başlığı',
+              label: 'Öne çıkan yazı başlığı',
+              description:
+                'En yeni yazının üstünde görünen küçük başlık.',
+            }),
+
+          latestTitle: z.string()
+            .nonempty()
+            .editor({
+              label: 'Son yazılar başlığı',
               description:
                 'Yazı listesinin üstünde görünen başlık.',
+            }),
+
+          allLabel: z.string()
+            .nonempty()
+            .editor({
+              label: 'Tüm yazılar butonu',
+              description:
+                'Listenin altındaki, /blog sayfasına giden butonun metni.',
             }),
 
           empty: z.string()
@@ -55,6 +71,19 @@ export default defineContentConfig({
                 'Henüz yayımlanmış bir yazı olmadığında gösterilir.',
             }),
         }),
+      }),
+    }),
+
+    /**
+     * /blog sayfasının başlık ve açıklaması.
+     */
+    blogPage: defineCollection({
+      type: 'page',
+
+      source: 'blog.yml',
+
+      schema: z.object({
+        seo: seoSchema,
       }),
     }),
 
@@ -176,7 +205,7 @@ export default defineContentConfig({
           .editor({
             label: 'Kategori',
             description:
-              'Tek kelimelik ana konu, örneğin Nuxt. Kartın üstünde rozet olarak görünür.',
+              'Yazının ana konusu, tek kelime olması en iyisi. Kartın üstünde rozet olarak görünür.',
           }),
 
         tags: z.array(z.string())

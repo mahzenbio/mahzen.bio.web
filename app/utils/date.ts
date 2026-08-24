@@ -1,6 +1,3 @@
-/**
- * Yayın tarihlerini sitenin her yerinde aynı biçimde gösterir.
- */
 export function formatDate(value: Date | string) {
   return new Intl.DateTimeFormat('tr-TR', {
     day: 'numeric',

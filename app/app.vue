@@ -25,7 +25,7 @@ useHead({
   titleTemplate: (title) => {
     return title
       ? `${title} — ${name}`
-      : `${name} — Kitap, film ve müzik üzerine notlar`
+      : `${name} — Notlar ve yazılar`
   },
 
   meta: [

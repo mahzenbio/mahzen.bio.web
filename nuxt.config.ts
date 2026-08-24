@@ -52,10 +52,10 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/', '/robots.txt', '/sitemap.xml', '/rss.xml'],
-    },
 
-    routeRules: {
-      '/blog': { redirect: { to: '/', statusCode: 301 } },
+      // On Vercel, NuxtImg emits /_vercel/image URLs that only exist at runtime.
+      // The crawler would follow them and fail the build with a 404.
+      ignore: ['/_vercel'],
     },
   },
 })

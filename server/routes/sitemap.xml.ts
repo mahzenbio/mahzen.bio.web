@@ -18,6 +18,12 @@ export default defineEventHandler(async (event) => {
       priority: '1.0',
     },
     {
+      loc: '/blog',
+      lastmod: new Date(latest),
+      changefreq: 'weekly',
+      priority: '0.9',
+    },
+    {
       loc: '/contact',
       lastmod: new Date(),
       changefreq: 'yearly',

@@ -1,11 +1,5 @@
 <template>
-  <UContainer
-    class="
-      flex min-h-screen flex-col
-      border-default
-      pt-4 sm:border-x sm:pt-6
-    "
-  >
+  <div class="flex min-h-screen flex-col">
     <AppHeader />
 
     <UMain class="flex-1">
@@ -13,5 +7,5 @@
     </UMain>
 
     <AppFooter />
-  </UContainer>
+  </div>
 </template>

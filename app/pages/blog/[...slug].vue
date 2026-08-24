@@ -32,9 +32,7 @@ const { data: surround } = await useAsyncData(
   },
 )
 
-const imageUrl = computed(() => {
-  return new URL(post.value!.image, siteUrl).href
-})
+const imageUrl = computed(() => new URL(post.value!.image, siteUrl).href)
 
 useSeoMeta({
   title: post.value.title,
@@ -66,10 +64,7 @@ useHead({
         'articleSection': post.value.category,
         'keywords': post.value.tags.join(', '),
         'mainEntityOfPage': new URL(route.path, siteUrl).href,
-        'publisher': {
-          '@type': 'Organization',
-          'name': name,
-        },
+        'publisher': { '@type': 'Organization', 'name': name },
       }),
     },
   ],
@@ -78,19 +73,19 @@ useHead({
 
 <template>
   <UPage v-if="post">
-    <UPageBody class="pt-8 sm:pt-10">
-      <UButton
-        to="/"
-        icon="i-lucide-arrow-left"
-        label="Tüm yazılar"
-        color="neutral"
-        variant="link"
-        size="sm"
-        class="-ml-2 px-2"
-      />
+    <article>
+      <section class="border-b border-default">
+        <UContainer class="py-12 sm:py-16">
+          <UButton
+            to="/blog"
+            icon="i-lucide-arrow-left"
+            label="Yazılar"
+            color="neutral"
+            variant="link"
+            size="sm"
+            class="mb-8 px-0"
+          />
 
-      <article class="mt-6">
-        <header class="mx-auto max-w-3xl">
           <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
             <UBadge
               :label="post.category"
@@ -109,42 +104,45 @@ useHead({
 
           <h1
             class="
-              mt-4 text-pretty text-3xl font-medium text-highlighted
-              sm:text-4xl
+              mt-5 max-w-4xl text-pretty text-3xl font-medium tracking-tight
+              text-highlighted
+              sm:text-4xl lg:text-5xl
             "
           >
             {{ post.title }}
           </h1>
 
-          <p class="mt-3 text-pretty text-base text-muted sm:text-lg">
+          <p class="mt-4 max-w-2xl text-pretty text-base text-muted sm:text-lg">
             {{ post.description }}
           </p>
-        </header>
+        </UContainer>
+      </section>
 
+      <UContainer class="py-12 sm:py-16">
         <NuxtImg
           :src="post.image"
           :alt="post.imageAlt"
-          width="1024"
-          height="576"
-          sizes="(max-width: 768px) 100vw, 1024px"
+          width="1280"
+          height="720"
+          sizes="(max-width: 1024px) 100vw, 1024px"
           preload
           fetchpriority="high"
           class="
-            mt-8 aspect-video w-full rounded-lg object-cover
+            mx-auto aspect-video w-full max-w-5xl rounded-xl object-cover
             ring ring-default
           "
         />
 
-        <div class="article-content mx-auto mt-10 max-w-3xl">
+        <div class="article-content mx-auto mt-14 max-w-3xl">
           <ContentRenderer
             v-if="post.body"
             :value="post"
           />
         </div>
 
-        <footer
+        <div
           v-if="post.tags?.length"
-          class="mx-auto mt-10 flex max-w-3xl flex-wrap items-center gap-2"
+          class="mx-auto mt-12 flex max-w-3xl flex-wrap items-center gap-2"
         >
           <UBadge
             v-for="tag in post.tags"
@@ -154,15 +152,15 @@ useHead({
             variant="outline"
             size="sm"
           />
-        </footer>
-      </article>
+        </div>
 
-      <USeparator class="my-10" />
+        <USeparator class="mx-auto my-12 max-w-3xl" />
 
-      <UContentSurround
-        :surround="surround"
-        class="mx-auto max-w-3xl"
-      />
-    </UPageBody>
+        <UContentSurround
+          :surround="surround"
+          class="mx-auto max-w-3xl"
+        />
+      </UContainer>
+    </article>
   </UPage>
 </template>

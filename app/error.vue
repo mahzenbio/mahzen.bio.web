@@ -45,8 +45,8 @@ useHead({
         >
           <template #links>
             <UButton
-              to="/"
-              label="Tüm yazılar"
+              to="/blog"
+              label="Yazılar"
               icon="i-lucide-arrow-left"
               color="neutral"
               variant="subtle"

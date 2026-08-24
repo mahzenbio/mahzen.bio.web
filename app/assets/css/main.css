@@ -8,8 +8,8 @@
 }
 
 :root {
-  /* Blog reading width — wider than a portfolio, still comfortable. */
-  --ui-container: var(--container-6xl);
+  /* Wide, borderless canvas — the grid carries the structure, not a frame. */
+  --ui-container: var(--container-7xl);
 
   ::selection {
     color: #282a30;

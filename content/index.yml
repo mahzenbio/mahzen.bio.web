@@ -1,8 +1,10 @@
-title: Okuduklarımı, izlediklerimi ve aklımda kalanları buraya yazıyorum.
-description: Kitaplar, filmler, müzik ve arada kalan düşünceler üzerine kısa notlar.
+title: Aklımda kalanları buraya yazıyorum.
+description: Üzerine düşünmeye değer bulduğum konularda kısa notlar ve denemeler.
 blog:
-  title: Son yazılar
+  featuredTitle: Öne çıkan
+  latestTitle: Son yazılar
+  allLabel: Tüm yazılar
   empty: Henüz yayımlanmış bir yazı yok. Yakında burada olacak.
 seo:
-  title: Kitap, film ve müzik üzerine notlar
-  description: Okuduklarım, izlediklerim ve dinlediklerim üzerine Türkçe kısa yazılar.
+  title: Notlar ve yazılar
+  description: mahzen.bio üzerinde yayımlanan notlar, denemeler ve yazılar.

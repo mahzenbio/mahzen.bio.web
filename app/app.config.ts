@@ -6,7 +6,7 @@ const site = {
   navigation: [
     {
       label: 'Yazılar',
-      to: '/',
+      to: '/blog',
     },
     {
       label: 'İletişim',
@@ -46,31 +46,6 @@ export default defineAppConfig({
       neutral: 'neutral',
     },
 
-    pageHero: {
-      slots: {
-        container: 'py-14 sm:py-18 lg:py-24',
-
-        title: [
-          'mx-0 max-w-2xl text-left',
-          'text-pretty text-3xl font-medium',
-          'sm:text-4xl lg:text-5xl',
-        ].join(' '),
-
-        description: [
-          'mx-0 mt-3 max-w-2xl text-left',
-          'text-pretty text-base text-muted',
-        ].join(' '),
-      },
-    },
-
-    blogPost: {
-      slots: {
-        title: 'text-lg text-pretty font-medium text-highlighted',
-        description: 'mt-1.5 text-sm text-pretty line-clamp-3',
-        date: 'text-xs text-muted',
-        meta: 'flex items-center gap-2 mb-2.5',
-      },
-    },
   },
 
   ...site,

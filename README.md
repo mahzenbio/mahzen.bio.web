@@ -1,6 +1,6 @@
 # mahzen.bio
 
-Kitap, film ve müzik üzerine notların yayımlandığı blog. Nuxt 4, Nuxt UI, Nuxt Content ve Nuxt Studio ile kurulu.
+Kişisel blog. Nuxt 4, Nuxt UI, Nuxt Content ve Nuxt Studio ile kurulu.
 
 ## Kurulum
 
@@ -31,8 +31,11 @@ GitHub OAuth uygulamasının callback adresi: `https://<alan-adı>/__nuxt_studio
 değişiklikleri `mahzenbio/mahzen.bio.web` deposunun `main` dalına commit eder.
 
 - `content/index.yml` — ana sayfa metinleri
+- `content/blog.yml` — /blog sayfasının başlığı ve açıklaması
 - `content/contact.yml` — iletişim sayfası ve form etiketleri
 - `content/blog/*.md` — blog yazıları
+
+Sayfalar: `/` (öne çıkan + son yazılar), `/blog` (tüm yazılar), `/blog/<slug>`, `/contact`, `/admin`.
 
 Yazı alanları `content.config.ts` içindeki şemadan gelir; Studio bu şemadan form üretir.
 `draft` açık olan yazılar sitede, sitemap'te ve RSS'te görünmez.

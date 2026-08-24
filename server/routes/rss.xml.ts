@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
 <channel>
   <title>mahzen.bio</title>
   <link>${siteUrl}</link>
-  <description>Kitaplar, filmler, müzik ve arada kalan düşünceler üzerine kısa notlar.</description>
+  <description>mahzen.bio üzerinde yayımlanan notlar, denemeler ve yazılar.</description>
   <language>tr</language>
   <lastBuildDate>${new Date(posts[0]?.date ?? Date.now()).toUTCString()}</lastBuildDate>
   <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
