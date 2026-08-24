@@ -1,75 +1,46 @@
-# Nuxt Minimal Starter
+# mahzen.bio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Kitap, film ve müzik üzerine notların yayımlandığı blog. Nuxt 4, Nuxt UI, Nuxt Content ve Nuxt Studio ile kurulu.
 
-## Setup
-
-Make sure to install dependencies:
+## Kurulum
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+cp .env.example .env   # değerleri doldur
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Ortam değişkenleri
 
-Build the application for production:
+```env
+NUXT_RESEND_API_KEY=
+NUXT_RESEND_FROM="Mahzen.bio <noreply@mahzen.bio>"
+NUXT_RESEND_TO=
+
+NUXT_STUDIO_AUTH_GITHUB_CLIENT_ID=
+NUXT_STUDIO_AUTH_GITHUB_CLIENT_SECRET=
+NUXT_SESSION_PASSWORD=
+```
+
+`server/plugins/studio-auth.ts` bu isimleri Nuxt Studio'nun beklediği isimlere eşler.
+GitHub OAuth uygulamasının callback adresi: `https://<alan-adı>/__nuxt_studio/auth/github`
+
+## İçerik yönetimi
+
+`/admin` adresinden GitHub ile giriş yapılır. Studio, `content/` altındaki dosyaları düzenler ve
+değişiklikleri `mahzenbio/mahzen.bio.web` deposunun `main` dalına commit eder.
+
+- `content/index.yml` — ana sayfa metinleri
+- `content/contact.yml` — iletişim sayfası ve form etiketleri
+- `content/blog/*.md` — blog yazıları
+
+Yazı alanları `content.config.ts` içindeki şemadan gelir; Studio bu şemadan form üretir.
+`draft` açık olan yazılar sitede, sitemap'te ve RSS'te görünmez.
+
+## Komutlar
 
 ```bash
-# npm
-npm run build
-
-# pnpm
+pnpm dev
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm lint
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

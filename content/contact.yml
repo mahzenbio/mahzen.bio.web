@@ -1,0 +1,13 @@
+title: İletişim
+description: Bir konu hakkında konuşmak veya bana ulaşmak istersen mesaj bırakabilirsin.
+form:
+  subjectLabel: Konu
+  subjectPlaceholder: Ne hakkında yazıyorsun?
+  messageLabel: Mesaj
+  messagePlaceholder: Mesajını buraya yaz.
+  submitLabel: Gönder
+  successMessage: Mesajın ulaştı, teşekkürler. En kısa sürede dönüş yapacağım.
+  errorMessage: Mesaj gönderilemedi. Lütfen daha sonra tekrar dene.
+seo:
+  title: İletişim
+  description: mahzen.bio ile iletişime geç.

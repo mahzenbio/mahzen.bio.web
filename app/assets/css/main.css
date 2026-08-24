@@ -1,2 +1,71 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@source "../../../content/**/*";
+
+@theme {
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  /* Blog reading width — wider than a portfolio, still comfortable. */
+  --ui-container: var(--container-6xl);
+
+  ::selection {
+    color: #282a30;
+    background-color: #050101;
+  }
+}
+
+.dark {
+  ::selection {
+    color: #ffffff;
+    background-color: #474747;
+  }
+}
+
+/* Page transitions — identical geometry in both themes. */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Article typography — spacing tuned for long-form reading. */
+.article-content :where(h2) {
+  margin-top: 2.75rem;
+}
+
+.article-content :where(h3) {
+  margin-top: 2rem;
+}
+
+.article-content :where(p, ul, ol, blockquote) {
+  line-height: 1.8;
+}
+
+.article-content :where(img) {
+  border-radius: var(--radius-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: none;
+  }
+
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 1;
+    transform: none;
+  }
+}
