@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     },
 
     public: {
-      siteUrl: 'https://mahzenbio.vercel.app',
+      siteUrl: 'https://mahzen.bio',
     },
   },
 
