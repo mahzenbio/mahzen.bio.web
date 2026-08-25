@@ -1,5 +1,5 @@
 ---
-title: Yarıda bırakılan kitaplar
+title: İnsan Ne ile Yaşar?
 category: Kitap
 date: 2026-08-20
 description: Bir kitabı bitirmek zorunda olmadığımı kabul ettiğimden beri daha çok okuyorum. Bırakma izninin okuma alışkanlığına etkisi üzerine.
@@ -7,6 +7,11 @@ draft: false
 image: /images/blog/yarida-birakilan-kitaplar.webp
 imageAlt: Üst üste dizilmiş, gitgide kısalan yatay katmanlardan oluşan soyut çizim
 minRead: 4
+navigation:
+  title: ""
+seo:
+  title: Yarıda bırakılan kitaplar
+  description: Bir kitabı bitirmek zorunda olmadığımı kabul ettiğimden beri daha çok okuyorum. Bırakma izninin okuma alışkanlığına etkisi üzerine.
 tags:
   - Okuma
   - Alışkanlık
