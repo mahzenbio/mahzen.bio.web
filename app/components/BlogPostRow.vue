@@ -24,7 +24,7 @@ defineProps<{
         bg-elevated/60 ring-1 ring-default
       "
     >
-      <NuxtImg
+      <AppImage
         :src="post.image"
         :alt="post.imageAlt"
         width="320"
@@ -33,7 +33,7 @@ defineProps<{
         loading="lazy"
         class="
           size-full object-cover
-          transition-transform duration-[600ms] ease-out
+          transition-transform duration-600 ease-out
           group-hover:scale-[1.06]
           motion-reduce:transition-none motion-reduce:group-hover:scale-100
         "

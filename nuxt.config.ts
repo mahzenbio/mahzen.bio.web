@@ -20,6 +20,16 @@ export default defineNuxtConfig({
     },
   },
 
+  image: {
+    // Only providers named here end up in the bundle. AppImage switches to
+    // `none` for absolute URLs an editor pastes in, so it has to be listed.
+    providers: {
+      none: {
+        provider: 'none',
+      },
+    },
+  },
+
   studio: {
     route: '/admin',
 

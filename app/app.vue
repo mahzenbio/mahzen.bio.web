@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { tr } from '@nuxt/ui/locale'
 
-const { name } = useAppConfig()
+// Alt bileşenler aynı anahtarı paylaşıp hazır sonucu okuyabilsin diye site
+// ayarları burada, sayfa çizilmeden önce çekilir.
+const { data: settings } = await useSiteSettings()
+
+const name = settings.value?.name ?? ''
+
 const { public: { siteUrl } } = useRuntimeConfig()
 
 const colorMode = useColorMode()

@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <section class="relative isolate overflow-hidden bg-muted/30">
-    <NuxtImg
+    <AppImage
       :src="page.hero.image"
       :alt="page.hero.imageAlt"
       width="2400"

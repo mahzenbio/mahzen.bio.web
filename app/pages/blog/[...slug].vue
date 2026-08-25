@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
-const { name } = useAppConfig()
+const { data: settings } = useSiteSettings()
+
+const name = settings.value?.name ?? ''
 const { public: { siteUrl } } = useRuntimeConfig()
 
 const { data: post } = await useAsyncData(
@@ -51,7 +53,7 @@ useHead({
         'image': imageUrl.value,
         'datePublished': new Date(post.value.date).toISOString(),
         'articleSection': post.value.category,
-        'keywords': post.value.tags.join(', '),
+        'keywords': post.value.tags?.join(', '),
         'mainEntityOfPage': new URL(route.path, siteUrl).href,
         'publisher': { '@type': 'Organization', 'name': name },
       }),
@@ -82,7 +84,7 @@ useHead({
           Blog
         </ULink>
 
-        <NuxtImg
+        <AppImage
           :src="post.image"
           :alt="post.imageAlt"
           width="1280"
@@ -91,7 +93,7 @@ useHead({
           preload
           fetchpriority="high"
           class="
-            mt-8 aspect-[16/10] w-full rounded-lg object-cover
+            mt-8 aspect-16/10 w-full rounded-lg object-cover
             bg-elevated/60 ring-1 ring-default
           "
         />

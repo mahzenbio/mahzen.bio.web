@@ -30,6 +30,7 @@ GitHub OAuth uygulamasının callback adresi: `https://<alan-adı>/__nuxt_studio
 `/admin` adresinden GitHub ile giriş yapılır. Studio, `content/` altındaki dosyaları düzenler ve
 değişiklikleri `mahzenbio/mahzen.bio.web` deposunun `main` dalına commit eder.
 
+- `content/settings.yml` — site geneli: site adı, logo yazısı, üst menü ve alt bilgi
 - `content/index.yml` — ana sayfa: hero başlığı, açıklaması, arka plan görseli, buton metni, bölüm başlıkları ve kapanış daveti
 - `content/blog.yml` — /blog sayfasının başlığı ve açıklaması
 - `content/contact.yml` — iletişim sayfası ve form etiketleri

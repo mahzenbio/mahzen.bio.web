@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { navigation } = useAppConfig()
+const { data: settings } = useSiteSettings()
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const { navigation } = useAppConfig()
       <AppLogo />
 
       <UNavigationMenu
-        :items="navigation"
+        :items="settings?.navigation ?? []"
         aria-label="Ana menü"
         color="neutral"
         variant="link"

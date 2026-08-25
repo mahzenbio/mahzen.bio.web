@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { wordmark } = useAppConfig()
+const { data: settings } = useSiteSettings()
+
+const wordmark = computed(() => settings.value?.wordmark ?? '')
 </script>
 
 <template>

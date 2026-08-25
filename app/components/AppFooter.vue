@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { footer } = useAppConfig()
+const { data: settings } = useSiteSettings()
 </script>
 
 <template>
@@ -10,12 +10,12 @@ const { footer } = useAppConfig()
     }"
   >
     <template #left>
-      {{ footer.credits }}
+      {{ settings?.footer.credits }}
     </template>
 
     <template #right>
       <UButton
-        v-for="link in footer.links"
+        v-for="link in settings?.footer.links ?? []"
         :key="link.to"
         :icon="link.icon"
         :to="link.to"

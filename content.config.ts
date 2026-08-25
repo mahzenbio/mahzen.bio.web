@@ -28,6 +28,104 @@ const seoSchema = z.object({
 export default defineContentConfig({
   collections: {
     /**
+     * Site geneli ayarlar: site adı, menü ve alt bilgi.
+     */
+    settings: defineCollection({
+      type: 'data',
+
+      source: 'settings.yml',
+
+      schema: z.object({
+        name: z.string()
+          .nonempty()
+          .editor({
+            label: 'Site adı',
+            description:
+              'Sekme başlığında ve paylaşım önizlemelerinde görünür.',
+          }),
+
+        wordmark: z.string()
+          .nonempty()
+          .editor({
+            label: 'Logo yazısı',
+            description:
+              'Sol üstte, logonun yanında görünen kısa ad.',
+          }),
+
+        navigation: z.array(z.object({
+          label: z.string()
+            .nonempty()
+            .editor({
+              label: 'Bağlantı metni',
+            }),
+
+          to: z.string()
+            .nonempty()
+            .editor({
+              label: 'Adres',
+              description:
+                'Site içi adres, örneğin /blog.',
+            }),
+        }))
+          .default([])
+          .editor({
+            label: 'Menü',
+            description:
+              'Sağ üstteki menüde soldan sağa görünür.',
+          }),
+
+        footer: z.object({
+          credits: z.string()
+            .nonempty()
+            .editor({
+              label: 'Telif metni',
+              description:
+                'Alt bilgide solda görünür, örneğin "© 2026 mahzen.bio".',
+            }),
+
+          links: z.array(z.object({
+            icon: z.string()
+              .nonempty()
+              .editor({
+                input: 'icon',
+                label: 'İkon',
+              }),
+
+            to: z.string()
+              .nonempty()
+              .editor({
+                label: 'Adres',
+                description:
+                  'Tam URL ya da site içi adres, örneğin /contact.',
+              }),
+
+            ariaLabel: z.string()
+              .nonempty()
+              .editor({
+                label: 'Erişilebilirlik etiketi',
+                description:
+                  'Ekran okuyucuların okuduğu açıklama.',
+              }),
+
+            target: z.enum(['_blank', '_self'])
+              .optional()
+              .editor({
+                label: 'Açılış şekli',
+                description:
+                  'Dış bağlantılar için _blank seçin; yeni sekmede açılır.',
+              }),
+          }))
+            .default([])
+            .editor({
+              label: 'Bağlantılar',
+              description:
+                'Alt bilgide sağda görünen ikon bağlantıları.',
+            }),
+        }),
+      }),
+    }),
+
+    /**
      * Ana sayfanın metinleri.
      */
     index: defineCollection({
