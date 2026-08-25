@@ -1,15 +1,16 @@
 ---
 title: Kahve Kültürü Üzerine Söylemler;
+category: Kahve
+date: 2026-08-25
 description: Merhaba;
+draft: false
+image: https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+imageAlt: ""
 seo:
-  title: Kahve Kültürü Üzerine Söylemler; file
+  title: Kahve Kültürü Üzerine Söylemler;
   description: w
 tags:
   - Kahve
-image: https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-imageAlt: ""
-category: Kahve
-date: 2026-08-25
 ---
 
 # **Kahvenin Yolculuğu ve Kahvehaneler**
