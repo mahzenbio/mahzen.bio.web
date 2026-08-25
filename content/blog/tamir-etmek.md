@@ -1,15 +1,15 @@
 ---
 title: Tamir etmek, yenisini almaktan zor değil
-description: Bozulan bir şeyi açıp bakmak, o şeyin nasıl çalıştığını öğrenmenin en kısa yolu.
+category: Zanaat
 date: 2026-07-02
+description: Bozulan bir şeyi açıp bakmak, o şeyin nasıl çalıştığını öğrenmenin en kısa yolu.
+draft: false
 image: /images/blog/tamir-etmek.webp
 imageAlt: Merkeze doğru büyüyen noktalardan oluşan soyut nokta deseni
-category: Zanaat
+minRead: 5
 tags:
   - Zanaat
   - Alışkanlık
-minRead: 5
-draft: false
 ---
 
 Bir şey bozulduğunda ilk refleksim uzun süre yenisini aramak oldu. Tamir etmek zor, zaman alıcı ve muhtemelen işe yaramaz görünüyordu. Çoğu zaman öyle olmadığını, ancak bir kere denedikten sonra anladım.

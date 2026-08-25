@@ -6,7 +6,7 @@ description: Parçaları karıştırarak dinlemek kolay, ama bazı albümler sı
 draft: false
 image: /images/blog/bastan-sona-dinlemek.webp
 imageAlt: Farklı yüksekliklerde dikey çubuklardan oluşan soyut çizim
-minRead: "4"
+minRead: 4
 tags:
   - Müzik
   - Dinleme

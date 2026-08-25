@@ -1,15 +1,15 @@
 ---
 title: Biriktirmek üzerine
-description: Bir mahzen, saklamak için değil; zamanla olgunlaşsın diye vardır. Toplamakla biriktirmek arasındaki fark.
+category: Arşiv
 date: 2026-06-12
+description: Bir mahzen, saklamak için değil; zamanla olgunlaşsın diye vardır. Toplamakla biriktirmek arasındaki fark.
+draft: false
 image: /images/blog/biriktirmek-uzerine.webp
 imageAlt: İç içe geçmiş kemerlerden oluşan soyut çizim
-category: Arşiv
+minRead: 5
 tags:
   - Arşiv
   - Alışkanlık
-minRead: 5
-draft: false
 ---
 
 Toplamakla biriktirmek aynı şey sanılıyor. Toplamak yığmak; biriktirmek ise bir şeyin zamanla değişmesine izin vermek.

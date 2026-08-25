@@ -1,15 +1,15 @@
 ---
 title: Yürüyerek düşünmek
-description: Masa başında çözülmeyen bir mesele, yarım saatlik yürüyüşte kendiliğinden açılıyor. Neden böyle olduğu üzerine.
+category: Deneme
 date: 2026-07-09
+description: Masa başında çözülmeyen bir mesele, yarım saatlik yürüyüşte kendiliğinden açılıyor. Neden böyle olduğu üzerine.
+draft: false
 image: /images/blog/yuruyerek-dusunmek.webp
 imageAlt: Kadrajı çapraz kesen paralel çizgilerden oluşan soyut çizim
-category: Deneme
+minRead: 4
 tags:
   - Alışkanlık
   - Şehir
-minRead: 4
-draft: false
 ---
 
 Takıldığım bir mesele varsa masada oturmaya devam etmenin işe yaramadığını kabul etmem yıllar aldı. Ekrana ne kadar bakarsam bakayım aynı üç fikrin etrafında dönüyordum.

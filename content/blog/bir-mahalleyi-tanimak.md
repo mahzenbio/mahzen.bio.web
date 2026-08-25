@@ -1,15 +1,15 @@
 ---
 title: Bir mahalleyi tanımak ne kadar sürüyor
-description: Bir yere taşındıktan sonra orayı "bilmek" ile orada "yaşamak" arasındaki fark üzerine notlar.
+category: Şehir
 date: 2026-07-26
+description: Bir yere taşındıktan sonra orayı "bilmek" ile orada "yaşamak" arasındaki fark üzerine notlar.
+draft: false
 image: /images/blog/bir-mahalleyi-tanimak.webp
 imageAlt: Aşağı doğru inen basamaklar hâlinde dizilmiş dikdörtgenlerden oluşan soyut çizim
-category: Şehir
+minRead: 5
 tags:
   - Şehir
   - Gözlem
-minRead: 5
-draft: false
 ---
 
 Yeni bir mahalleye taşındığımda ilk iki hafta her şey harita üzerinden ilerliyor. Market nerede, durak nerede, en yakın fırın hangisi. Bu bilgi işe yarıyor ama mahalleyi tanımak anlamına gelmiyor.

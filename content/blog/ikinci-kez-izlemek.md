@@ -1,15 +1,15 @@
 ---
 title: Aynı filmi ikinci kez izlemek
-description: İlk izleyişte hikâyeyi takip ediyoruz, ikincisinde filmi görüyoruz. Tekrar izlemenin neyi açtığı üzerine notlar.
+category: Film
 date: 2026-08-14
+description: İlk izleyişte hikâyeyi takip ediyoruz, ikincisinde filmi görüyoruz. Tekrar izlemenin neyi açtığı üzerine notlar.
+draft: false
 image: /images/blog/ikinci-kez-izlemek.webp
 imageAlt: Ortak bir merkezden genişleyen iç içe halkalardan oluşan soyut çizim
-category: Film
+minRead: 5
 tags:
   - Sinema
   - İzleme
-minRead: 5
-draft: false
 ---
 
 İlk izleyişte bir filmi neredeyse hiç görmüyoruz. "Sonra ne olacak?" sorusu bütün dikkati tutuyor. Kamera nerede duruyor, sahne ne kadar sürüyor, kim ne zaman susuyor — bunların hiçbiri fark edilmiyor, çünkü zihin hikâyeyi kovalıyor.

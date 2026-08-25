@@ -1,15 +1,15 @@
 ---
 title: Aynı anda tek iş
-description: İki işi birden yürütmenin neden iki kat değil, yarım kat verim verdiği üzerine.
+category: Çalışma
 date: 2026-07-14
+description: İki işi birden yürütmenin neden iki kat değil, yarım kat verim verdiği üzerine.
+draft: false
 image: /images/blog/tek-is-uzerine.webp
 imageAlt: Bir merkezden dışa doğru uzanan ışınlardan oluşan soyut çizim
-category: Çalışma
+minRead: 4
 tags:
   - Çalışma
   - Dikkat
-minRead: 4
-draft: false
 ---
 
 Bir işi bitirmeden diğerine geçtiğim günlerin sonunda hep aynı his oluyor: bütün gün çalıştım ama hiçbir şey bitmedi.

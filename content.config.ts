@@ -290,9 +290,12 @@ export default defineContentConfig({
               'Yazının altında listelenen konu etiketleri.',
           }),
 
+        // `.int()` yerine `.multipleOf(1)`: `.int()` JSON şemasında tipi
+        // `integer` yapıyor, Nuxt Content bu tipi tanımadığı için sütunu
+        // TEXT'e düşürüyor ve okuma süresi metin olarak geri dönüyor.
         minRead: z.number()
-          .int()
           .positive()
+          .multipleOf(1)
           .editor({
             label: 'Okuma süresi (dakika)',
             description:

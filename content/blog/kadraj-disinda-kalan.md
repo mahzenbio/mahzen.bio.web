@@ -1,15 +1,15 @@
 ---
 title: Kadrajın dışında kalan
-description: Bir fotoğrafı iyi yapan şey çoğu zaman içine aldığı değil, dışarıda bıraktığı. Çerçeveyi daraltmak üzerine.
+category: Fotoğraf
 date: 2026-08-16
+description: Bir fotoğrafı iyi yapan şey çoğu zaman içine aldığı değil, dışarıda bıraktığı. Çerçeveyi daraltmak üzerine.
+draft: false
 image: /images/blog/kadraj-disinda-kalan.webp
 imageAlt: Üst üste kaymış dikdörtgen çerçevelerden oluşan soyut çizim
-category: Fotoğraf
+minRead: 4
 tags:
   - Fotoğraf
   - Kadraj
-minRead: 4
-draft: false
 ---
 
 Uzun süre fotoğraf çekerken kadraja bir şey eklemeye çalıştım. Bir detay daha, bir insan daha, biraz daha gökyüzü. Sonuç hep aynıydı: bakılacak çok şey olan ama hiçbir şey söylemeyen kareler.
