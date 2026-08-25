@@ -67,6 +67,12 @@ export default defineNuxtConfig({
       // On Vercel, NuxtImg emits /_vercel/image URLs that only exist at runtime.
       // The crawler would follow them and fail the build with a 404.
       ignore: ['/_vercel'],
+
+      // Tek bir sayfanın prerender'da hata vermesi dağıtımın tamamını
+      // düşürmesin. Vercel çıktısı sunucu içerdiği için önceden üretilemeyen
+      // yol, istek anında SSR ile yine servis edilir; hata build log'unda
+      // uyarı olarak görünür.
+      failOnError: false,
     },
   },
 })

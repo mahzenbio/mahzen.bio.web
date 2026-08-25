@@ -23,7 +23,18 @@ if (!post.value) {
   })
 }
 
-const imageUrl = computed(() => new URL(post.value!.image, siteUrl).href)
+// Studio bir yazıyı her alan dolmadan kaydedebiliyor; eksik alan sayfayı
+// düşürmemeli, sadece ilgili satır görünmemeli.
+const imageUrl = computed(() =>
+  post.value?.image ? new URL(post.value.image, siteUrl).href : undefined,
+)
+
+const publishedAt = computed(() => toValidDate(post.value?.date))
+
+const metaItems = computed(() => [
+  post.value?.category,
+  post.value?.minRead ? `${post.value.minRead} dk okuma` : null,
+].filter((item): item is string => Boolean(item)))
 
 useSeoMeta({
   title: post.value.title,
@@ -33,7 +44,7 @@ useSeoMeta({
   ogType: 'article',
   ogImage: imageUrl,
   ogImageAlt: post.value.imageAlt,
-  articlePublishedTime: new Date(post.value.date).toISOString(),
+  articlePublishedTime: publishedAt.value?.toISOString(),
   articleSection: post.value.category,
   articleTag: post.value.tags,
   twitterTitle: post.value.title,
@@ -51,7 +62,7 @@ useHead({
         'headline': post.value.title,
         'description': post.value.description,
         'image': imageUrl.value,
-        'datePublished': new Date(post.value.date).toISOString(),
+        'datePublished': publishedAt.value?.toISOString(),
         'articleSection': post.value.category,
         'keywords': post.value.tags?.join(', '),
         'mainEntityOfPage': new URL(route.path, siteUrl).href,
@@ -85,6 +96,7 @@ useHead({
         </ULink>
 
         <AppImage
+          v-if="post.image"
           :src="post.image"
           :alt="post.imageAlt"
           width="1280"
@@ -100,17 +112,15 @@ useHead({
 
         <header class="mt-10">
           <div class="eyebrow flex flex-wrap items-center gap-x-3 gap-y-2 text-dimmed">
-            <time :datetime="new Date(post.date).toISOString()">
-              {{ formatDate(post.date) }}
+            <time v-if="publishedAt" :datetime="publishedAt.toISOString()">
+              {{ formatDate(publishedAt) }}
             </time>
 
-            <span aria-hidden="true">·</span>
+            <template v-for="(item, index) in metaItems" :key="item">
+              <span v-if="publishedAt || index > 0" aria-hidden="true">·</span>
 
-            <span>{{ post.category }}</span>
-
-            <span aria-hidden="true">·</span>
-
-            <span>{{ post.minRead }} dk okuma</span>
+              <span>{{ item }}</span>
+            </template>
           </div>
 
           <h1
