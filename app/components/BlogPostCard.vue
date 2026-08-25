@@ -16,7 +16,9 @@ const image = computed(() => ({
   width: featured ? 1024 : 720,
   height: featured ? 576 : 540,
   sizes: featured ? FEATURED_SIZES : GRID_SIZES,
-  loading: featured ? 'eager' : 'lazy',
+  // `as const` olmadan TS bunu `string`e genişletiyor, UBlogPost ise
+  // `'eager' | 'lazy'` bekliyor.
+  loading: featured ? ('eager' as const) : ('lazy' as const),
 }))
 </script>
 
@@ -32,11 +34,11 @@ const image = computed(() => ({
       root: featured ? 'lg:gap-x-14' : 'h-full',
       header: [
         'rounded-lg ring-1 ring-default bg-elevated/60',
-        featured ? 'aspect-[16/10]' : 'aspect-[4/3]',
+        featured ? 'aspect-16/10' : 'aspect-4/3',
       ].join(' '),
       image: [
         'object-cover w-full h-full',
-        'transition-transform duration-[600ms] ease-out',
+        'transition-transform duration-600 ease-out',
         'group-hover/blog-post:scale-[1.04]',
         'motion-reduce:transition-none motion-reduce:group-hover/blog-post:scale-100',
       ].join(' '),
