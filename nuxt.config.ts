@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'motion-v/nuxt',
     'nuxt-studio',
+    '@vercel/analytics/nuxt',
   ],
 
   app: {
