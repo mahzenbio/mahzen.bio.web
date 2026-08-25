@@ -1,5 +1,5 @@
 ---
-title: Aynı yemeği tekrar tekrar pişirmek
+title: Aynı yemeği tekrar tekrar pişirme
 category: Mutfak
 date: 2026-08-05
 description: Yeni tarif aramayı bırakıp tek bir yemeği yirmi kez pişirdiğimde mutfakta öğrendiklerim.
@@ -7,6 +7,9 @@ draft: false
 image: /images/blog/ayni-yemegi-tekrar-pisirmek.webp
 imageAlt: Yatay dalgalar hâlinde ilerleyen kontur çizgilerinden oluşan soyut çizim
 minRead: 5
+seo:
+  title: Aynı yemeği tekrar tekrar pişirmek
+  description: Yeni tarif aramayı bırakıp tek bir yemeği yirmi kez pişirdiğimde mutfakta öğrendiklerim.
 tags:
   - Mutfak
   - Alışkanlık
