@@ -20,10 +20,19 @@ NUXT_RESEND_TO=
 NUXT_STUDIO_AUTH_GITHUB_CLIENT_ID=
 NUXT_STUDIO_AUTH_GITHUB_CLIENT_SECRET=
 NUXT_SESSION_PASSWORD=
+NUXT_STUDIO_AUTH_GITHUB_MODERATORS=
 ```
 
 `server/plugins/studio-auth.ts` bu isimleri Nuxt Studio'nun beklediği isimlere eşler.
 GitHub OAuth uygulamasının callback adresi: `https://<alan-adı>/__nuxt_studio/auth/github`
+
+`NUXT_STUDIO_AUTH_GITHUB_MODERATORS` virgülle ayrılmış bir e-posta listesidir; `/admin` yalnızca
+bu listedeki GitHub hesaplarına açılır. Karşılaştırma hesabın primary e-postasıyla birebir yapılır
+(büyük/küçük harf ve virgül sonrası boşluk dahil), commit e-postasıyla değil. Değişken boş
+bırakılırsa herhangi bir GitHub hesabı panele girebilir; depoya yazma yetkisi olmadığı için commit
+atamaz ama taslak içeriği görür ve AI/medya uçlarını kullanabilir.
+
+Bu değişkenlerin aynısı Vercel proje ayarlarında da tanımlı olmalı — `.env` yalnızca yerelde geçerli.
 
 ## İçerik yönetimi
 
