@@ -10,7 +10,7 @@ cta:
   title: Bir şey mi söylemek istiyorsun?
   description: Yazdıklarım hakkında bir düşüncen ya da tamamen başka bir konuda bir sorun varsa mesaj bırakabilirsin.
   label: Mesaj gönder
-description: Okuduklarım, denediklerim, merak ettiklerim. Konu sınırı yok; üstüne düşünmeye değer bulduğum ne varsa buraya bırakıyorum.
+description: Okuduklarım, denediklerim, merak ettiklerim, üstüne düşünmeye değer bulduğum ne varsa buraya bırakıyorum.
 hero:
   badge: Not defteri
   image: /images/hero.png
