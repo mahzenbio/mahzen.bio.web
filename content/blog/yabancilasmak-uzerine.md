@@ -1,15 +1,14 @@
 ---
 title: Yabancılaşmak Üzerine;
-description: İnsanın kendini bulma yolculuğunda topluma, duygulara ve geçmişe yabancılaşmasının bedeli üzerine kişisel bir deneme.
 category: Deneme
 date: 2026-10-07
 draft: false
 image: /images/Gemini-Generated-Image-to17a1to17a1to17.jpg
 imageAlt: Kalabalık bir şehir sokağında aynanın önünde yalnız duran bir adamın siyah beyaz çizimi
 minRead: 4
-tags:
-  - Yabancılaşma
-  - Kendini bulmak
+seo:
+  title: Yabancılaşmak Üzerine;
+  description: İnsanın kendini bulma yolculuğunda topluma, duygulara ve geçmişe yabancılaşmasının bedeli üzerine kişisel bir deneme.
 ---
 
 Yıllar önce kendimi tanımaya başladığımda (ki bu süreç insanın son nefesine kadar da devam eder) topluma ne kadar yabancılaştığımı, bulunduğum ortamlarda kendimi ne kadar aykırı hissettiğimi idrak etmeye başlamıştım. Bunun bana özgü bir durum olduğunu düşünmüyorum ancak bazı çevrelerce çocuksu, ergence bulunmasına da oldukça karşıyım. Bir insanın bulunduğu ortama yabancılaşmadan kendini bulmasını pek mümkün bulmam. En azından bende böyle oldu. Bir şeyi bulabilmek, başka bir şeye yabancı kalmadan pek mümkün değil. Yeniden birini sevebilmek için önce eskiye yabancılaşmak gerekmez mi zaten? İnsanın kendini bulabilmesi için de önce yabancılaşması gerekir.
